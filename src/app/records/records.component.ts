@@ -10,7 +10,7 @@ import { RecordsService } from '../records.service';
   styleUrls: ['./records.component.css']
 })
 export class RecordsComponent implements OnInit {
-  records: Record[] = [];
+  records: string[] = [];
 
   constructor(
     private recordsService: RecordsService,
@@ -21,8 +21,7 @@ export class RecordsComponent implements OnInit {
   }
 
   getRecords(): void {
-    this.recordsService.getRecords()
-    .subscribe(records => this.records = records);
+    this.records = this.recordsService.getRecords();
   }
 
   openDialog() {

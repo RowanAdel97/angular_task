@@ -4,7 +4,7 @@
 <table>
     <div *ngIf="records.length; else empty">
         <tr *ngFor="let record of records">
-            <td>{{ record.fact }}</td>
+            <td>{{ record }}</td>
         </tr>
     </div>
     <ng-template #empty>
