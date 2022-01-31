@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Record } from '../record';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatDialog } from "@angular/material/dialog";
 import { RecordsService } from '../records.service';
@@ -21,7 +20,8 @@ export class RecordsComponent implements OnInit {
   }
 
   getRecords(): void {
-    this.records = this.recordsService.getRecords();
+    this.recordsService.getRecords()
+    .subscribe(records => this.records = records['data']);
   }
 
   openDialog() {
