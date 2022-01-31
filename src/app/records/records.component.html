@@ -1,0 +1,13 @@
+<div>
+    <button mat-raised-button (click)="openDialog()">Get Data</button>
+</div>
+<table>
+    <div *ngIf="records.length; else empty">
+        <tr *ngFor="let record of records">
+            <td>{{ record.fact }}</td>
+        </tr>
+    </div>
+    <ng-template #empty>
+        <td>There are no records.</td>
+      </ng-template>
+</table>
